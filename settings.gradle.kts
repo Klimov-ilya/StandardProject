@@ -25,4 +25,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "StandardProject"
 include(":app")
- 
+include(":sdk:architecture")

@@ -28,7 +28,9 @@ android {
 
 dependencies {
     implementation(project(":features:news:list:api"))
+    implementation(project(":features:news:list:impl"))
     implementation(project(":features:settings:api"))
+    implementation(project(":features:settings:impl"))
     implementation(project(":sdk:architecture"))
     implementation(project(":sdk:navigation"))
 

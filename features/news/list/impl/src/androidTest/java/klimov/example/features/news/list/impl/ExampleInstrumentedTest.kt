@@ -1,4 +1,4 @@
-package klimov.example.sdk.architecture
+package klimov.example.features.news.list.impl
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("klimov.example.sdk.architecture.test", appContext.packageName)
+        assertEquals("klimov.example.features.news.list.impl.test", appContext.packageName)
     }
 }

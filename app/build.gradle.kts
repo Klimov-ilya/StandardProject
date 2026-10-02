@@ -27,6 +27,13 @@ android {
 }
 
 dependencies {
+    implementation(project(":features:news:list:api"))
+    implementation(project(":features:settings:api"))
+    implementation(project(":sdk:architecture"))
+    implementation(project(":sdk:navigation"))
+
+    implementation(libs.androidx.navigation3.ui)
+
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)

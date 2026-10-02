@@ -27,3 +27,7 @@ rootProject.name = "StandardProject"
 include(":app")
 include(":sdk:architecture")
 include(":sdk:navigation")
+include(":features:settings:api")
+include(":features:settings:impl")
+include(":features:news:list:api")
+include(":features:news:list:impl")

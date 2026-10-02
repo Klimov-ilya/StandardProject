@@ -1,4 +1,4 @@
-package klimov.example.sdk.architecture
+package klimov.example.features.news.list.impl
 
 import org.junit.Test
 

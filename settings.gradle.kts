@@ -26,3 +26,4 @@ dependencyResolutionManagement {
 rootProject.name = "StandardProject"
 include(":app")
 include(":sdk:architecture")
+include(":sdk:navigation")

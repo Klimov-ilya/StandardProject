@@ -9,10 +9,12 @@ activityCompose = "1.13.0"
 kotlin = "2.4.10"
 composeBom = "2026.02.01"
 appcompat = "1.8.0"
-material = "1.14.0"
 nav3Core = "1.2.0"
 koin = "4.2.2"
 koin-plugin = "1.2.1"
+materialVersion = "1.14.0"
+retrofit = "3.0.0"
+robolectric = "4.17"
 
 [libraries]
 android-plugin = { module = "com.android.tools.build:gradle", version.ref = "android-plugin" }
@@ -38,6 +40,9 @@ koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
 kotlin-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
+squareup-retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-plugin" }

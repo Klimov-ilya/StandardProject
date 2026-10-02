@@ -16,8 +16,10 @@ android {
 
 dependencies {
     implementation(project(":features:news:list:api"))
+    implementation(project(":sdk:utils"))
     implementation(project(":sdk:navigation"))
     implementation(project(":sdk:architecture"))
+    implementation(project(":sdk:services:network"))
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.material3)

@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.standard.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.koin.compiler)
 }
 
 android {
@@ -35,6 +36,8 @@ dependencies {
     implementation(project(":sdk:navigation"))
 
     implementation(libs.androidx.navigation3.ui)
+    implementation(libs.koin.android)
+    implementation(libs.koin.core)
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)

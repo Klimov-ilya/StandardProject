@@ -20,3 +20,6 @@ out/
 # External native build folder generated
 .externalNativeBuild
 .cxx
+
+.agents
+.opencode

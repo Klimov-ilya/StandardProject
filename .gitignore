@@ -1,0 +1,22 @@
+# Gradle files
+.gradle/
+build/
+
+# Local configuration files
+local.properties
+
+# IntelliJ
+*.iml
+.idea/
+
+# Generated files
+bin/
+gen/
+out/
+
+# MacOS
+.DS_Store
+
+# External native build folder generated
+.externalNativeBuild
+.cxx

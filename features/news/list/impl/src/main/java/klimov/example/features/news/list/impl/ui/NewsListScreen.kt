@@ -8,11 +8,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ListItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.material3.Text
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
+import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -51,7 +56,11 @@ private fun NewsListContent(
                 is NewsListState.Loading -> NewsListLoadingState()
                 is NewsListState.LoadingError -> NewsListErrorState(onUiEvent = onUiEvent)
                 is NewsListState.Content -> {
-                    Text(text = "News list: ${state.newsList.joinToString()}")
+                    NewsListContentView(
+                        items = state.newsList,
+                        isRefreshing = state.isRefreshing,
+                        onRefresh = { onUiEvent(NewsListUiEvent.OnRefresh) }
+                    )
                 }
             }
         }
@@ -79,6 +88,27 @@ private fun NewsListErrorState(
         Text(text = "Error loading news list")
         Button(onClick = { onUiEvent(NewsListUiEvent.OnRetry) }) {
             Text(text = "Retry")
+        }
+    }
+}
+
+@Composable
+private fun NewsListContentView(
+    items: List<String>,
+    isRefreshing: Boolean,
+    onRefresh: () -> Unit,
+) {
+    val state = rememberPullToRefreshState()
+
+    PullToRefreshBox(
+        state = state,
+        isRefreshing = isRefreshing,
+        onRefresh = onRefresh,
+    ) {
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
+            items(items) {
+                ListItem({ Text(text = it) })
+            }
         }
     }
 }

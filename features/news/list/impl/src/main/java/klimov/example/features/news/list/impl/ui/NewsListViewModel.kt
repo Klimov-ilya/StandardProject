@@ -40,8 +40,6 @@ internal class NewsListViewModel(
         }
     }
 
-    fun getText() = "Hello world"
-
     private fun mutateContent(mutation: (NewsListState.Content) -> NewsListState.Content) {
         mutateViewState { state ->
             when (state) {

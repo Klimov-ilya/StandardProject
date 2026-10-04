@@ -34,6 +34,7 @@ dependencies {
     implementation(project(":features:settings:impl"))
     implementation(project(":sdk:architecture"))
     implementation(project(":sdk:navigation"))
+    implementation(project(":sdk:services:network"))
 
     implementation(libs.androidx.navigation3.ui)
     implementation(libs.koin.android)

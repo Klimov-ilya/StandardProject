@@ -2,6 +2,7 @@ package klimov.example.standardproject
 
 import android.app.Application
 import klimov.example.features.news.list.impl.newsListModules
+import klimov.example.sdk.services.network.networkModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -15,7 +16,8 @@ class StandardProjectApplication : Application() {
             androidContext(this@StandardProjectApplication)
             modules(
                 listOf(
-                    newsListModules
+                    newsListModules,
+                    networkModules
                 )
             )
         }

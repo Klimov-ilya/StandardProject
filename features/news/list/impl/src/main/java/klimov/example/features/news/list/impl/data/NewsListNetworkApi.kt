@@ -9,6 +9,12 @@ internal class NewsListNetworkApi(
 
     @Throws(NetworkException::class)
     suspend fun getNewsList(): List<String> {
-        return newsListApi.getNewsList()
+        return newsListApi.getNewsList(limit = NEWS_LIST_LIMIT)
+            .results
+            .map(NewsArticleResponse::title)
+    }
+
+    private companion object {
+        const val NEWS_LIST_LIMIT = 10
     }
 }
